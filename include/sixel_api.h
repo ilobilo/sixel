@@ -19,29 +19,23 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef LIBSIXEL_STATUS_H
-#define LIBSIXEL_STATUS_H
+#ifndef SIXEL_API_H
+#define SIXEL_API_H
+
+#include <stddef.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#if HAVE_TESTS
-int
-sixel_status_tests_main(void);
-#endif
+void *sixel_malloc(size_t size);
+void sixel_free(void *ptr);
+
+void *sixel_memset(void *dest, int ch, size_t count);
+void *sixel_memcpy(void *dest, const void *src, size_t count);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* LIBSIXEL_STATUS_H */
-
-/* emacs Local Variables:      */
-/* emacs mode: c               */
-/* emacs tab-width: 4          */
-/* emacs indent-tabs-mode: nil */
-/* emacs c-basic-offset: 4     */
-/* emacs End:                  */
-/* vim: set expandtab ts=4 sts=4 sw=4 : */
-/* EOF */
+#endif /* SIXEL_API_H */
